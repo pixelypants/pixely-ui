@@ -11,7 +11,11 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface PxlyButton {
+    'color': "primary" | "accent" | "light";
     'disabled': boolean;
+    'shape': "square" | "round";
+    'size': "small" | "default" | "large";
+    'type': "button" | "reset" | "submit";
   }
 }
 
@@ -30,7 +34,11 @@ declare global {
 
 declare namespace LocalJSX {
   interface PxlyButton {
+    'color'?: "primary" | "accent" | "light";
     'disabled'?: boolean;
+    'shape'?: "square" | "round";
+    'size'?: "small" | "default" | "large";
+    'type'?: "button" | "reset" | "submit";
   }
 
   interface IntrinsicElements {

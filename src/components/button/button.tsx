@@ -1,20 +1,42 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from "@stencil/core";
+import { CssClassMap } from "../../utils/interfaces";
 
 @Component({
-  tag: 'pxly-button',
-  styleUrl: 'button.scss',
+  tag: "pxly-button",
+  styleUrl: "button.scss",
   shadow: true
 })
 export class Button {
   @Prop({ reflectToAttr: true })
   disabled: boolean;
 
+  @Prop()
+  type: "button" | "reset" | "submit" = "button";
+
+  @Prop()
+  color: "primary" | "accent" | "light" = "primary";
+
+  @Prop()
+  shape: "square" | "round" = "square";
+
+  @Prop()
+  size: "small" | "default" | "large" = "default";
+
   render() {
+    const classMap = this.getCssClassMap();
+
     return (
-      <button disabled={this.disabled}>
-        <slot></slot>
+      <button type={this.type} class={classMap} disabled={this.disabled}>
+        <slot />
       </button>
     );
   }
 
+  private getCssClassMap(): CssClassMap {
+    return {
+      [this.color]: true,
+      [this.shape]: true,
+      [this.size]: true
+    };
+  }
 }
