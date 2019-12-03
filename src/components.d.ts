@@ -17,6 +17,14 @@ export namespace Components {
     'size': "small" | "default" | "large";
     'type': "button" | "reset" | "submit";
   }
+  interface PxlyTab {
+    'active': boolean;
+    'disabled': boolean;
+    'label': string;
+  }
+  interface PxlyTabs {
+    'openTab': (index: number) => Promise<void>;
+  }
 }
 
 declare global {
@@ -27,8 +35,22 @@ declare global {
     prototype: HTMLPxlyButtonElement;
     new (): HTMLPxlyButtonElement;
   };
+
+  interface HTMLPxlyTabElement extends Components.PxlyTab, HTMLStencilElement {}
+  var HTMLPxlyTabElement: {
+    prototype: HTMLPxlyTabElement;
+    new (): HTMLPxlyTabElement;
+  };
+
+  interface HTMLPxlyTabsElement extends Components.PxlyTabs, HTMLStencilElement {}
+  var HTMLPxlyTabsElement: {
+    prototype: HTMLPxlyTabsElement;
+    new (): HTMLPxlyTabsElement;
+  };
   interface HTMLElementTagNameMap {
     'pxly-button': HTMLPxlyButtonElement;
+    'pxly-tab': HTMLPxlyTabElement;
+    'pxly-tabs': HTMLPxlyTabsElement;
   }
 }
 
@@ -40,9 +62,19 @@ declare namespace LocalJSX {
     'size'?: "small" | "default" | "large";
     'type'?: "button" | "reset" | "submit";
   }
+  interface PxlyTab {
+    'active'?: boolean;
+    'disabled'?: boolean;
+    'label'?: string;
+  }
+  interface PxlyTabs {
+    'onChange'?: (event: CustomEvent<any>) => void;
+  }
 
   interface IntrinsicElements {
     'pxly-button': PxlyButton;
+    'pxly-tab': PxlyTab;
+    'pxly-tabs': PxlyTabs;
   }
 }
 
@@ -53,6 +85,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pxly-button': LocalJSX.PxlyButton & JSXBase.HTMLAttributes<HTMLPxlyButtonElement>;
+      'pxly-tab': LocalJSX.PxlyTab & JSXBase.HTMLAttributes<HTMLPxlyTabElement>;
+      'pxly-tabs': LocalJSX.PxlyTabs & JSXBase.HTMLAttributes<HTMLPxlyTabsElement>;
     }
   }
 }

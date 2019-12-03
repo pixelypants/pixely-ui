@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/pixely-ui.esm.js"></script>
-  <script nomodule src="/build/pixely-ui.js"></script>
+    <script type="module" src="/build/pixely-ui.esm.js"></script>
+    <script nomodule src="/build/pixely-ui.js"></script>
+  </head>
+  <body>
+    <pxly-tabs>
+      <pxly-tab active label="Tab 1"></pxly-tab>
+      <pxly-tab label="Tab 2"></pxly-tab>
+      <pxly-tab label="Tab 3 [disabled]" disabled></pxly-tab>
+      <pxly-tab label="Tab 4"></pxly-tab>
+    </pxly-tabs>
+    <br />
+    <br />
+    <pxly-button>Click it bro!</pxly-button>
+    <pxly-button disabled>Button</pxly-button>
+    <pxly-button disabled>Button</pxly-button>
 
-</head>
-<body>
-
-  <pxly-button>Click it bro!</pxly-button>
-  <pxly-button disabled>Button</pxly-button>
-
-</body>
+    <pxly-button>Button</pxly-button>
+    <pxly-button color="accent">Button</pxly-button>
+    <pxly-button color="light">Button</pxly-button>
+    <pxly-button shape="round">Button</pxly-button>
+    <pxly-button shape="round" color="accent">Button</pxly-button>
+    <pxly-button shape="round" color="light">Button</pxly-button>
+    <br />
+    <br />
+    <pxly-button disabled>Button</pxly-button>
+    <pxly-button disabled color="accent">Button</pxly-button>
+    <pxly-button disabled color="light">Button</pxly-button>
+    <pxly-button disabled shape="round">Button</pxly-button>
+    <pxly-button disabled shape="round" color="accent">Button</pxly-button>
+    <pxly-button disabled shape="round" color="light">Button</pxly-button>
+    <br />
+    <br />
+    <pxly-button size="large">Button</pxly-button>
+    <pxly-button size="small">Button</pxly-button>
+    <pxly-button shape="round" size="large">Button</pxly-button>
+    <pxly-button shape="round" size="small">Button</pxly-button>
+  </body>
 </html>
