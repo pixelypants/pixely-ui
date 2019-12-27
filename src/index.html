@@ -18,6 +18,12 @@
       <pxly-tab label="Tab 3 [disabled]" disabled></pxly-tab>
       <pxly-tab label="Tab 4"></pxly-tab>
     </pxly-tabs>
+    <script>
+      const tabsElement = document.querySelector("pxly-tabs");
+      tabsElement.addEventListener("tabClicked", event => {
+        console.log(event.detail.tabId);
+      });
+    </script>
     <br />
     <br />
     <pxly-button>Click it bro!</pxly-button>

@@ -68,7 +68,7 @@ declare namespace LocalJSX {
     'label'?: string;
   }
   interface PxlyTabs {
-    'onChange'?: (event: CustomEvent<any>) => void;
+    'onTabClicked'?: (event: CustomEvent<any>) => void;
   }
 
   interface IntrinsicElements {

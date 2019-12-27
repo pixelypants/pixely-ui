@@ -18,8 +18,8 @@ export class Tabs {
   @Element()
   el: HTMLElement;
 
-  @Event({ eventName: "change" })
-  onChange: EventEmitter;
+  @Event({ eventName: "tabClicked" })
+  onTabClicked: EventEmitter;
 
   @State()
   tabs: HTMLPxlyTabElement[] = [];
@@ -43,7 +43,7 @@ export class Tabs {
         tab.active = i === index;
         return tab;
       });
-      this.onChange.emit({ tabId: index });
+      this.onTabClicked.emit({ tabId: index });
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from "@stencil/core";
+import { Component, Prop } from "@stencil/core";
 
 @Component({
   tag: "pxly-tab",
