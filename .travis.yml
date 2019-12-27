@@ -4,5 +4,4 @@ node_js:
 deploy:
   provider: npm
   email: "hudson.graham@gmail.com"
-  api_token: NPM_API_TOKEN
   edge: false # opt in to dpl v2
