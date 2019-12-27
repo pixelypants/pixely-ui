@@ -4,4 +4,4 @@ node_js:
 deploy:
   provider: npm
   email: "hudson.graham@gmail.com"
-  edge: false # opt in to dpl v2
+  edge: true # opt in to dpl v2
