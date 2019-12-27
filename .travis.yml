@@ -3,5 +3,6 @@ node_js:
   - 8.9
 deploy:
   provider: npm
+  email: "hudson.graham@gmail.com"
   api_token: NPM_API_TOKEN
   edge: false # opt in to dpl v2
